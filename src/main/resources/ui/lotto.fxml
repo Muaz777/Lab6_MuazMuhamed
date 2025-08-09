@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.muaz.LottoController" spacing="12" padding="20">
+    <Label text="Quick Pick Lotto:" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <GridPane hgap="12" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="150"/>
+            <ColumnConstraints halignment="LEFT" minWidth="200"/>
+        </columnConstraints>
+
+        <Label text="Minimum number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="minField" promptText="e.g. 1" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Maximum number:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="maxField" promptText="e.g. 42" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Quantity of balls:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="qtyField" promptText="e.g. 6" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Generate Lotto Numbers" onAction="#onGenerate" maxWidth="220"/>
+    <Label text="Your lotto numbers are:"/>
+    <TextArea fx:id="outputArea" prefRowCount="6" wrapText="true" editable="false"/>
+
+    <HBox spacing="10">
+        <Button text="Clear" onAction="#onClear"/>
+    </HBox>
+</VBox>
